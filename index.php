@@ -13,8 +13,11 @@
 }
 -->
 </style>
-SMOB's not here right now
- sd
+
+<h3>SMOB's not here right now but how about some pshychedelic promos and radio spots!</h3>
+
+<iframe src="https://archive.org/embed/PsychedelicPromosRadioSpotsVol.8" width="560" height="384" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe>
+
 
 </body>
 </html>
