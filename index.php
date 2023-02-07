@@ -13,7 +13,7 @@
 }
 -->
 </style>
-SMOB's not here right nowasdfdsf
+SMOB's not here right now
 
 
 </body>
