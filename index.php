@@ -14,7 +14,6 @@
 -->
 </style>
 SMOB's not here right now
-asd
 
 
 </body>
