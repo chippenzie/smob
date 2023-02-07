@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mavenVideoAsset>
+<link>living/2008/10/27/distributor.test.cnn</link>
+<id>distributor:test</id>
+<genre>Living</genre>
+<expired/>
+<date>2008/10/27</date>
+<title>testing the distributor mechanism</title>
+<description>ttt!</description>
+<trt>5:45</trt>
+<image>http://i2.cdn.turner.com/cnn/video/living/2008/10/27/distributor.test.cnn.576x324.jpg</image>
+<segvars>site=cnn&amp;cnn_pagetype=cnn_video&amp;cnn_position=video_preroll_lg&amp;cnn_rollup=living&amp;page.allowcompete=yes</segvars>
+</mavenVideoAsset>

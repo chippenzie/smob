@@ -1,0 +1,19 @@
+<html>
+<head>
+	<title>edition issue</title>
+</head>
+<body>
+<div id="doood"></div><br/>
+
+<script>
+	var date = new Date();
+	var epoch = date.getTime();
+	var cnn_iframe_name = 'cnnVideoIframe_' + epoch;
+
+	var frame_source = 'http://www.cnn.com';
+
+	document.getElementById('doood').innerHTML = "<iframe frameborder='0' id=\"" + cnn_iframe_name + "_od\" name='" + cnn_iframe_name + "' src=\"" + frame_source + "\" height=\"600px\" width=\"800px\" style=\"border:1px solid #ff0000\"></iframe>";
+</script>
+
+</body>
+</html>

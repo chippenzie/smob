@@ -1,0 +1,34 @@
+<body>
+<div>
+	
+<div id="image_arena" style="">
+<img id="targetiomg" src="http://i2.cdn.turner.com/cnn/.element/img/1.3/pipeline/keyframes/88x49/stream1.jpg">
+</div>
+	
+<div id = "desc"></div>
+	
+	
+</div>
+	
+</body>
+
+
+<script type="text/javascript">
+	var i=0;
+	var old_id = 'img' + Math.random();
+	var desc = document.getElementById('desc');
+	var b=false;
+
+	updateImage();
+	
+	function updateImage() {
+		var im = new Image();
+		im.src='http://i2.cdn.turner.com/cnn/.element/img/1.3/pipeline/keyframes/88x49/stream1.jpg#e' + Math.random();
+		document.getElementById('image_arena').appendChild(im);
+
+		setTimeout(updateImage, 30000);
+		return;
+
+	}	
+
+</script>

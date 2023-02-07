@@ -1,0 +1,759 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html lang="en"><head><script type="text/javascript">document.domain='cnn.com';</script><meta http-equiv="content-type" content="text/html; charset=iso-8859-1"><title>Video - Breaking News Videos from CNN.com - Smurfs take to the air</title> <meta name="title" content="I Just Saw This on CNN.com: Smurfs take to the air"><meta name="description" content="Macy's tests out it's newest Thanksgiving Day Parade balloons, including a giant Smurf character."><script type="text/javascript">var loadThisVideo = '/video/us/2008/11/10/vo.ny.macys.balloon.test.wpix';</script><meta name="Keywords" content="CNN, CNN news, CNN.com, CNN TV, CNN video, CNN video news, CNN Live, CNN.com video, CNN.com Live, Live from CNN.com, video, VOD, video news, live, live video, live breaking news, flash video, flash video player"> 
+<link rel="alternate" type="application/rss+xml" title="CNN.com: Video" href="http://rss.cnn.com/rss/cnn_freevideo.rss" /> 
+<link rel="stylesheet" href="http://i.cdn.turner.com/cnn/.element/ssi/css/1.4/video/playlist.css" type="text/css" />			
+<link rel="stylesheet" href="http://i.cdn.turner.com/cnn/.element/css/2.0/common.css" type="text/css" />			
+<link rel="stylesheet" href="http://i.cdn.turner.com/cnn/.element/css/2.0/bvp.css" type="text/css" />			
+<link rel="stylesheet" type="text/css" href="http://i.cdn.turner.com/cnn/.e/css/2.0/CNNVideoControlsBVP.css">
+<!--[if LT IE 7]>
+<link rel="stylesheet" type="text/css" href="http://i.cdn.turner.com/cnn/.e/css/2.0/CNNVideoControlsIEPNGFIX.css">
+<![endif]--> 
+
+<style type="text/css">
+.warn_message {color: #FF0000}
+.info_message {color: #009966}
+.debug_message {color: #0000FF}
+</style>
+<script src="http://i.cdn.turner.com/cnn/.e/js/2.0/video/common/primary.js"></script>
+<script src="http://i.cdn.turner.com/cnn/.e/js/2.0/scripts/prototype.js" type="text/javascript"></script>
+
+<script src="http://i.cdn.turner.com/cnn/.e/js/2.0/scripts/scriptaculous.js" type="text/javascript"></script>
+<script src="http://i.cdn.turner.com/cnn/.e/js/2.0/video/xmp/xmp_net.js"></script>
+<script src="http://i.cdn.turner.com/cnn/.e/js/2.0/video/xmp/xmp_util.js"></script>
+<script src="http://i.cdn.turner.com/cnn/.e/js/2.0/video/xmp/xmp_views.js"></script>
+<script src="http://i.cdn.turner.com/cnn/.e/js/2.0/video/xmp/xmp_playerapi.js"></script>
+<script src="http://i.cdn.turner.com/cnn/.e/js/2.0/video/xmp/xmp_playerapi_native.js"></script>
+<script src="http://i.cdn.turner.com/cnn/.e/js/2.0/video/xmp/xmp_playlistapi.js"></script>
+<script src="http://i.cdn.turner.com/cnn/.e/js/2.0/video/xmp/xmp_services.js"></script>
+<script src="http://i.cdn.turner.com/cnn/.e/js/2.0/video/xmp/xmp_baseplayer.js"></script>
+
+<script src="http://i.cdn.turner.com/cnn/.e/js/2.0/video/common/comments.js"></script>
+<script src="http://i.cdn.turner.com/cnn/.element/js/2.0/csiManager.js"></script>	
+<script src="http://i.cdn.turner.com/cnn/.e/js/2.0/video/common/cnnplayer.js"></script>
+<script src="http://i.cdn.turner.com/cnn/.element/js/2.0/main.js" type="text/javascript"></script>
+<script src="http://i.cdn.turner.com/cnn/.e/js/2.0/video/common/trigger_commands.js"></script>
+<script src="http://i.cdn.turner.com/cnn/.e/js/2.0/video/common/bvplisteners.js"></script>
+<script src="http://i.cdn.turner.com/cnn/.element/js/2.0/StorageManager.js"></script>
+<script src="http://i.cdn.turner.com/cnn/.e/js/2.0/video/common/ajaxManager.js" type="text/javascript"></script>
+<script src="http://i.cdn.turner.com/cnn/.e/js/2.0/video/common/vidplayManager.js" type="text/javascript"></script>
+
+<script src="http://i.cdn.turner.com/cnn/.e/js/2.0/video/common/playlistmanager.js"></script>
+<script src="http://i.cdn.turner.com/cnn/.e/js/2.0/video/common/videoControls.js"></script>
+<script>
+window.displayOverlay = null;
+var cnnIsIntl = (location.hostname.indexOf('edition.') > -1) ? true : false; 
+var clickID = (cnnIsIntl) ? 205026 : 89487;
+var clickTitle = 'insertTitle';
+var clickURL = 'insertURL';
+cnnSectionData = new Array();
+numberOfVideosInList = 7;
+
+function killTaboolaObject() {
+	return;
+	countdown = null;
+		try {
+			window.displayOverlay.style.display = 'none';
+		} catch(err) { }
+		window.displayOverlay = null;
+}
+
+function hideTaboolaObject() {
+	return;
+	countdown = null;
+	try {
+		if (window.displayOverlay != null)
+			window.displayOverlay.closeRelated();
+			window.displayOverlay.enableButton(false);
+	} catch(err) { }
+}
+
+var countdown = null;
+function startTaboolaBypassCountdown() {
+	return;
+	countdown = setTimeout("advancePlayerTaboola()",8000);
+}
+
+function advancePlayerTaboola() {
+	return;
+	if (countdown != null && countdown != 'holdPlease') {
+		killTaboolaObject();
+		CNNPlayer.getActivePlayer().advance();
+	}	
+}
+
+function taboolaEventHandler(eventType, videoId, videoPage) {
+	return;
+	if (eventType == 'onVideoSelected') {
+		hideTaboolaObject();
+		CNNPlaylistManager.getInstance().BVPMVideoSelected(videoId+'.json','taboola');
+	}
+	if (eventType == 'onMouseOver' && countdown != null) {		
+		countdown = 'holdPlease';
+	}
+	if (eventType == 'onMouseOut' && countdown == 'holdPlease') {
+		countdown = setTimeout("advancePlayerTaboola()",3000);
+	}
+}
+
+function loadMyPlaylistContents()
+{
+	storage=StorageManager.getInstance().getStorage();
+	storage.setOnload(storageLoaded);
+	storage.load();
+}
+function storageLoaded() {
+	MYPlaylist.getInstance().loadFromStorage();
+}
+
+function initializeCallback() {
+}
+
+function isBootStrapped(success) {
+	if (success) {
+			CNNPlayer.getInstance('bvpplayer','index').setPlayerContext(CNNPlaylistManager.getInstance().vidContext);
+
+			CNNPlaylistManager.getInstance('bvpplayer').controller = new CoreVideoControls('controlsContainer');
+			var c = CNNPlaylistManager.getInstance('bvpplayer').controller;
+			c.addButton('play', CoreVideoControls_Play.init, 'Play_Disabled_BVP', 'Play_ActiveOff_BVP', 'Play_ActiveOff_BVP', CoreVideoControls_Play.clickEvent);
+			c.addButton('pause', CoreVideoControls_Pause.init, 'Pause_Disabled_BVP','Pause_ActiveOff_BVP','Pause_ActiveOff_BVP', CoreVideoControls_Pause.clickEvent);
+			c.addButton('embed', CoreVideoControls_Embed.init, 'Embed_Disabled_BVP','Embed_ActiveOff_BVP','Embed_ActiveOff_BVP', CoreVideoControls_Embed.clickEvent);
+			c.addButton('share', CoreVideoControls_Share.init, 'Share_Disabled_BVP','Share_ActiveOff_BVP','Share_ActiveOff_BVP', CoreVideoControls_Share.clickEvent);
+			c.addButton('fullscreen', CoreVideoControls_Fullscreen.init, 'Fullscreen_Disabled_BVP','Fullscreen_ActiveOff_BVP','Fullscreen_ActiveOff_BVP', CoreVideoControls_Fullscreen.clickEvent);
+			c.addButton('volume', CoreVideoControls_VolumeButton.init, 'Volume_Disabled_BVP','Volume_Semi_BVP','Volume_Full_BVP', CoreVideoControls_VolumeButton.clickEvent);
+			c.addScrubber('volume', CoreVideoControls_VolumeScrubber.init, 'VolumeTrackBackground_BVP',null,'VolumeHandlerBacker_BVP',null,'VolumeHandlerEnabled_BVP',CoreVideoControls_VolumeScrubber.slideChangeEvent, CoreVideoControls_VolumeScrubber.slideChangeEvent);
+			c.addScrubber('timeline', CoreVideoControls_Timeline.init, 'TimelineTrackBackground_BVP', 'TimelineTrackBuffer_BVP', 'TimelineHandlerBacker_BVP', 'TimelineHandlerDisabled_BVP', 'TimelineHandlerEnabled_BVP', CoreVideoControls_Timeline.slideEvent, CoreVideoControls_Timeline.changeEvent);
+			c.addClock('time and duration', CoreVideoControls_Clock.init, 'TimeSpent_BVP','Duration_BVP','TimeSep_BVP');
+			c.initialize(initializeCallback);
+
+
+			CNNPlaylistManager.getInstance('bvpplayer').MYPMLoadFromStorage();
+
+	} else {
+		str = "<div class=\"cnnVideoMessageContainer\"><div class=\"cnnVideoMessage\"><p class=\"cnnTopGraf\">";
+		str += CNNPlaylistManager.getInstance().errorMessageGenerator() + '</div></div>';
+		document.getElementById('cnnVPFlashLargeContainer').innerHTML = str;
+	}
+}
+
+function initTest() {
+	if (document.searchForm.query.value != "search all video") {
+		document.searchForm.query.className = "cnnVideo_Search_active";
+	}
+		if (
+			((window.navigator.platform.toLowerCase()).indexOf('mac') > -1 &&
+			new CNN_FlashDetect().detectVersion(9)) || 
+			((window.navigator.platform.toLowerCase()).indexOf('mac') < 0 &&
+			new CNN_FlashDetect().detectVersion(8))) {
+			// create player
+			CNNPlaylistManager.isBootStrapped = isBootStrapped;
+			CNNPlayer.create();		
+	}
+	else {
+		document.getElementById('cnnVPFlashLargeContainer').innerHTML = "<div class=\"cnnNoFlashContainer\"><div class=\"cnnNoFlash\"><p class=\"cnnTopGraf\">This CNN.com feature is optimized for Adobe Flash Player version "+(((window.navigator.platform.toLowerCase()).indexOf('mac') > -1) ? '9' : '8')+" or higher.<\/p><p><b>You are currently using Flash Player " + parseInt(CNN_FlashDetect.prototype.getVersion()) + "<\/b><\/p><a href=\"http://www.adobe.com/go/getflashplayer\" target=\"blank\"><img src=\"http://i.cdn.turner.com/cnn/.element/img/2.0/global/noflash/install_btn.gif\" class=\"cnnGetBtn\" width=\"155\" height=\"31\" alt=\"Get Flash Player\" border=\"0\"><\/a><\/div><\/div>";
+	}
+}
+
+function sectionLoad(sec) {
+	if (sec == 'us') {
+		load_Section('navBy_Section','',true,true);
+		load_By_Section('us', '/.element/ssi/www/auto/2.0/video/xml/by_section_us.xml','us');
+	} else if (sec == 'politics') {
+		load_Section('navBy_Section','',true,true);
+		load_By_Section('politics', '/.element/ssi/www/auto/2.0/video/xml/by_section_politics.xml');
+	} else if (sec == 'showbiz') {
+		load_Section('navBy_Section','',true,true);
+		load_By_Section('showbiz', '/.element/ssi/www/auto/2.0/video/xml/by_section_showbiz.xml','showbiz');
+	} else if (sec == 'tech') {
+		load_Section('navBy_Section','',true,true);
+		load_By_Section('tech', '/.element/ssi/www/auto/2.0/video/xml/by_section_tech.xml');
+	} else if (sec == 'living') {
+		load_Section('navBy_Section','',true,true);
+		load_By_Section('living', '/.element/ssi/www/auto/2.0/video/xml/by_section_living.xml');
+	} else if (sec == 'health') {
+		load_Section('navBy_Section','',true,true);
+		load_By_Section('health', '/.element/ssi/www/auto/2.0/video/xml/by_section_health.xml');
+	} else if (sec == 'business') {
+		load_Section('navBy_Section','',true,true);
+		load_By_Section('business', '/.element/ssi/www/auto/2.0/video/xml/by_section_business.xml');
+	} else if (sec == 'crime') {
+		load_Section('navBy_Section','',true,true);
+		load_By_Section('crime', '/.element/ssi/www/auto/2.0/video/xml/by_section_crime.xml','us',1);
+	} else if (sec == 'sports') {
+		load_Section('navBy_Section','',true,true);
+		load_By_Section('sports', '/.element/ssi/www/auto/2.0/video/xml/by_section_sports.xml');
+	} else if (sec == 'weather') {
+		load_Section('navBy_Section','',true,true);
+		load_By_Section('weather', '/.element/ssi/www/auto/2.0/video/xml/by_section_weather.xml');
+	} else if (sec == 'world') {
+		load_Section('navBy_Section','',true,true);
+		load_By_Section('world', '/.element/ssi/www/auto/2.0/video/xml/by_section_world.xml','world');
+	} else if (sec == 'international' || sec == 'nitn.intl') {
+		load_Section('navBy_Section','',true,true);
+		load_By_Section('intl', '/.element/ssi/www/auto/2.0/video/xml/by_section_international.xml','world','1');
+	} else if (sec == 'spanish') {
+		load_Section('navBy_Section','',true,true);
+		load_By_Section('espanol', '/.element/ssi/www/auto/2.0/video/xml/by_section_espanol.xml','world','1');
+	} else if (sec == 'offbeat') {
+		load_Section('navBy_Section','',true,true);
+		load_By_Section('funny', '/.element/ssi/www/auto/2.0/video/xml/by_section_funny_news.xml','showbiz','1');
+	} else if (sec == 'top_stories') {
+		load_Section('navTop_Stories','/.element/ssi/www/auto/2.0/video/xml/top_stories.xml',false,true); 
+	} else if (sec == 'staff_picks') {
+		load_Section('navStaff_Picks','/.element/ssi/www/auto/2.0/video/xml/staff_picks.xml',false,true);
+	} else if (sec == 'most_popular') {
+		load_Section('navMost_Popular','/.element/ssi/www/auto/2.0/video/xml/most_popular.xml',false,true);
+	} else if (sec == 'cnn_tv') {
+		load_Section('navCNN_TV','/.element/ssi/www/auto/2.0/video/xml/cnn_tv.xml',false,true);
+	} else if (sec == 'pipeline_live') {
+		load_Section('navPipeline_Live','/.element/ssi/www/auto/2.0/video/xml/pipeline.xml',false,true);
+	} else if (sec == 'ireports') {
+		load_Section('navI_Reports','/.element/ssi/www/auto/2.0/video/xml/by_section_ireports.xml',false,true);
+	} else {
+		load_Section('navTop_Stories','/.element/ssi/www/auto/2.0/video/xml/top_stories.xml',false,true); 
+	} 	
+}
+
+function loadFirstSection() {
+	first_time = true;
+	str = '' + location.href;
+	if (str.indexOf('launchLivePlayer') > -1) {
+		var openedWindow = window.open(('http://www.cnn.com/video/live/live.html?stream=stream'+str.charAt(str.length - 1)),'liveplayer','width=672,height=540,menubar=no,resizable=no,scrollbars=no,status=no,toolbar=no',true);
+		if (openedWindow) { sectionLoad(''); } else {
+			document.getElementById('cnnVPFlashLargeContainer').innerHTML = "<div class=\"cnnVideoMessageContainer\"><div class=\"cnnVideoMessage\"><p class=\"cnnTopGraf\"><b>LIVE VIDEO PLAYER BLOCKED</b><br><br>Your popup blocker has blocked access to the CNN Video Player.<br> To view your video, please launch the CNN Live Video Player below.<br><br><input type=\"button\" value=\"Launch CNN Live Video Player\" onclick=\"window.open(('http://www.cnn.com/video/live/live.html?stream=stream'+str.charAt(str.length - 1)),'liveplayer','width=672,height=540,menubar=no,resizable=no,scrollbars=no,status=no,toolbar=no',true);\"><\/div><\/div>";
+		}
+	} else if (null != loadThisVideo) {
+
+		var sec = '';
+   	CNNPlaylistManager.getInstance().loadFirstVideo = loadThisVideo+'.json';
+   	sec = (loadThisVideo.split('/'))[2];
+		sectionLoad(sec);
+
+	} else {
+		if (str.indexOf('/video/#/') > -1 || str.indexOf('/video/?/')>-1) {
+			var strSlc = '';
+			if(str.indexOf('/video/#/') > -1)
+				strSlc = str.slice(str.indexOf('/#/')+3);
+			else
+				strSlc = str.slice(str.indexOf('/?/')+3);
+      			if (strSlc.indexOf('video/') == 0) {
+              			if (strSlc.indexOf('?DPFPR=true') > -1) {
+                      			CNNPlaylistManager.getInstance().forceSensitive = true;
+                      			CNNPlaylistManager.getInstance().loadFirstVideo = '/'+strSlc.slice(0,strSlc.indexOf('?DPFPR=true'))+'.json';
+              			} else {
+              				if (strSlc.indexOf('?') > -1)
+                      				CNNPlaylistManager.getInstance().loadFirstVideo = '/'+strSlc.slice(0,strSlc.indexOf('?'))+'.json';
+                      			else
+                      				CNNPlaylistManager.getInstance().loadFirstVideo = '/'+strSlc+'.json';
+              			}
+              			sec = (strSlc.split('/'))[1];
+      			}
+			else { sec = strSlc; }
+			sectionLoad(sec);
+		} else {
+				if (cnnIsIntl) {
+					load_Section('navBy_Section','',true,true);
+					load_By_Section('world', '/.element/ssi/www/auto/2.0/video/xml/by_section_world.xml','world');
+				} else {
+					load_Section('navTop_Stories','/.element/ssi/www/auto/2.0/video/xml/top_stories.xml',false,true); 
+				}
+		}
+	}
+}
+var cnnCommentDomain = "";
+
+if (location.host.indexOf('cnn.com') > -1 && location.host.indexOf('qai') == -1) {
+	cnnCommentDomain = "comments.cnn.com";
+} else {
+	//cnnCommentDomain = "cnnp1app2.turner.com";
+	cnnCommentDomain = "cnnp1appqai1.turner.com";
+}
+</script>
+<script src="http://i.cdn.turner.com/cnn/.element/js/2.0/cnnCustomButton.js"></script>
+<script language="JavaScript" type="text/javascript">var cnnCurrTime = new Date(1226350978329); var cnnCurrHour = 16; var cnnCurrMin = 02; var cnnCurrDay='Mon';</script>
+<script type="text/javascript" src="http://i.cdn.turner.com/cnn/.element/js/2.0/ad_head0.js"></script>
+<script type="text/javascript" src="http://i.cdn.turner.com/cnn/cnn_adspaces/cnn_adspaces.js"></script>
+
+<script type="text/javascript">
+	function makeOn() { document.images['playImg'].src = 'http://i.cdn.turner.com/cnn/video/bvp/images/play_on.png'; }
+	function makeOff() { document.images['playImg'].src = 'http://i.cdn.turner.com/cnn/video/bvp/images/play_off.png'; }
+	function emailOn() { document.images['emailImg'].src = 'http://i.cdn.turner.com/cnn/video/bvp/images/email_on.png'; }
+	function emailOff() { document.images['emailImg'].src = 'http://i.cdn.turner.com/cnn/video/bvp/images/email_off.png'; }
+	function moveOn1() { document.images['replayImg'].src = 'http://i.cdn.turner.com/cnn/video/bvp/images/rply_on.png'; }
+	function moveOut1() { document.images['replayImg'].src = 'http://i.cdn.turner.com/cnn/video/bvp/images/rply_off.png'; }
+</script>
+
+<!--[if gte IE 5.5]>
+<![if lt IE 7]>
+<style type="text/css">
+
+#email_button_sm img { filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0); }
+#email_button_sm { display: inline-block;cursor:hand; }
+#email_button_sm { filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://i.cdn.turner.com/cnn/video/bvp/images/email_sm_off.png'); }
+#replay_button_sm img { filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0); }
+#replay_button_sm { display: inline-block;cursor:hand; }
+#replay_button_sm { filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://i.cdn.turner.com/cnn/video/bvp/images/rply_sm_off.png'); }
+#play_button_ht img { filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0); }
+#play_button_ht { display: inline-block;cursor:hand; }
+#play_button_ht { filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://i.cdn.turner.com/cnn/video/bvp/images/play_HT_off.png'); }
+#play_button img { filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0); }
+#play_button { display: inline-block;cursor:hand; }
+#play_button { filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://i.cdn.turner.com/cnn/video/bvp/images/play_off.png'); }
+#replay_button img { filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0); }
+#replay_button { display: inline-block;cursor:hand; }
+#replay_button { filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://i.cdn.turner.com/cnn/video/bvp/images/rply_off.png'); }
+#email_button img { filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0); }
+#email_button { display: inline-block;cursor:hand; }
+#email_button { filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://i.cdn.turner.com/cnn/video/bvp/images/email_off.png'); }
+#thumb_overlay img { filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0); }
+#thumb_overlay { display: inline-block;cursor:hand; }
+#thumb_overlay { filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://i.cdn.turner.com/cnn/video/bvp/images/thumb_overlay.png'); }
+#thumb_overlay_s img { filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0); }
+#thumb_overlay_s { display: inline-block;cursor:hand; }
+#thumb_overlay_s { filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://i.cdn.turner.com/cnn/video/bvp/images/thumb_overlay_sm.png'); }
+.cnnVPComContent { word-wrap: break-word; }
+</style>
+<script>
+
+	function makeOn() { document.getElementById('play_button').runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://i.cdn.turner.com/cnn/video/bvp/images/play_on.png')"; }
+	function makeOff() { document.getElementById('play_button').runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://i.cdn.turner.com/cnn/video/bvp/images/play_off.png')"; }
+
+	function emailOn() { document.getElementById('email_button').runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://i.cdn.turner.com/cnn/video/bvp/images/email_on.png')"; }
+	function emailOff() { document.getElementById('email_button').runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://i.cdn.turner.com/cnn/video/bvp/images/email_off.png')"; }
+
+	function moveOn1() { document.getElementById('replay_button').runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://i.cdn.turner.com/cnn/video/bvp/images/rply_on.png')"; }
+	function moveOut1() { document.getElementById('replay_button').runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://i.cdn.turner.com/cnn/video/bvp/images/rply_off.png')"; }
+
+</script>
+<![endif]>
+<![endif]-->
+</head>
+
+<body onload="initTest();">
+
+<!-- hide from everybody but facebook -->
+<div class="thumbs" style="display:none">
+	<img src="http://i2.cdn.turner.com/cnn//video/us/2008/11/10/vo.ny.macys.balloon.test.wpix.88x49.jpg">
+	<img src="http://i2.cdn.turner.com/cnn//video/us/2008/11/10/vo.ny.macys.balloon.test.wpix.160x90.jpg">
+	<img src="http://i2.cdn.turner.com/cnn//video/us/2008/11/10/vo.ny.macys.balloon.test.wpix.64x48.jpg">
+	<img src="http://i2.cdn.turner.com/cnn//video/us/2008/11/10/vo.ny.macys.balloon.test.wpix.44x25.jpg">
+</div>
+
+<div id="cnnContainer">
+<div id="cnnContentContainer">
+<div id="cnnVPContainer">
+
+<div class="cnnBackHome">
+	<!-- start feedback link -->		
+	<style type="text/css">
+	<!--
+	.cnnOpin {float:right;color:#F2F2F2;
+font-size:11px;}
+	.cnnOpin a.realmLink {font-weight:bold;font-size:11px;}
+	.cnnOpin a {margin:0px 6px;}
+	-->
+	</style>
+<div class="cnnOpin">
+<script language="javascript" type="text/javascript" charset="windows-1252" src="http://i.cdn.turner.com/cnn/.element/ssi/js/1.3/oo_engine.js"></script>
+
+<script language="javascript" type="text/javascript" charset="windows-1252"> 
+O_GoT('<img src="http://i.cdn.turner.com/cnn/.element/img/1.3/misc/opinionBlue.gif" border="0" title="Feedback" style="margin-right:5px;">Feedback');
+</script> | <a href="/help/video.html">Help</a></div>			
+
+<!-- /feedback link -->	
+
+<a href="/">&laquo; CNN.com Homepage</a>  
+</div>
+<!-- Tracking values -->
+<script language="javascript" type="text/javascript">
+<!--
+var cnnSectionName = "Video";
+var cnnSectionFront = "Video";
+var cnnPageName = "/video/index.html";
+//--></script>
+
+
+<div id="cnnVPNav">
+<table cellspacing="0" cellspacing="0" border="0" width="940">
+
+<colgroup>
+<col width="247">
+<col width="231">
+<col width="231">
+<col width="231">
+</colgroup>
+<tr>
+<td><img src="http://i.cdn.turner.com/cnn/.element/img/2.0/video/bvp/nav/cnn_video_logo.gif" width="130" height="24" alt="" border="0" class="cnnVideoLogo"></td>
+<td class="NavItem"><img src="http://i.cdn.turner.com/cnn/.element/img/2.0/video/bvp/nav/video_icon_active.gif" alt="" border="0">&nbsp;<a href="#" onclick="window.open('http://www.cnn.com/video/live/live.html?stream=stream1','liveplayer','width=672,height=540,menubar=no,resizable=no,scrollbars=no,status=no,toolbar=no',true); return false;">Live Video</a></td>
+<td class="NavItem"><img src="http://i.cdn.turner.com/cnn/.element/img/2.0/video/bvp/nav/podcast_icon.gif" width="12" height="14" alt="" border="0">&nbsp;<a href="/podcasts">Podcasts</a></td>
+<td class="NavItem"><img src="http://i.cdn.turner.com/cnn/.element/img/2.0/video/bvp/nav/radio_icon.gif" width="11" height="14" alt="" border="0">&nbsp;<a href="#" onclick="window.open('http://www.cnn.com/audio/radio/winmedia.html','radioplayer','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=360,height=573'); return false;">CNN&nbsp;Radio</a></td>
+</tr>
+</table>
+
+</div>
+
+<div id="cnnVPLeftCol">
+<div id="cnnVPFlash">
+<div id="cnnVPHeightDiv">
+
+<!-- LARGE PLAYER HTML CODE -->
+<div id="mosVidContainer" style="position: relative;">
+	<div id="cnnVPFlashLargeContainer" style="background-color:#000000;width: 574px; height: 324px; border-style: solid; border-color: #E6E6E6; border-width: 1px 1px 0px 1px;"></div>
+	<div id="controlsContainer" style="width: 574px; position: relative; background-color:#FFFFFF;height: 33px; border-style: solid; border-color: #E6E6E6; border-width: 0px 1px 1px 1px;">
+<!--		<div id="controlsContainerReal" style="positon: relative; top: 0px; left: 300px;">&nbsp;</div>
+		<div id="fullScreenContainer" style="width:65; display: none; position: absolute; top: 11px; left: 500px;"><img src="http://i.cdn.turner.com/cnn/.element/img/2.0/video/controls/fullscreenDisabled.gif"></div>
+		<div id="fullScreenDoubleClick" style="z-index: 9999; display: none; position: absolute; top: -17px; left: 445px;"><img src="http://i.cdn.turner.com/cnn/.element/img/2.0/video/controls/flashDoubleClick.gif"></div>
+		<div id="fullScreenUpgrade" style="z-index: 9999; display: none; position: absolute; top: -27px; left: 450px;"><a href="http://www.adobe.com/products/flashplayer/" target="_blank"><img border="no" src="http://i.cdn.turner.com/cnn/.element/img/2.0/video/controls/flashUpgrade.gif"></a></div> -->
+	</div>
+
+	<div id="cnnVPInfoL">
+
+		<div id="cnnVPInfoLeftCol">
+			<div style="padding:8px 10px 0px 10px;" id="contentL">
+			</div>
+		</div>
+		<div id="cnnVPInfoRightCol">
+			<div style="padding:8px 10px 0px 9px; ">
+				<div><div id="providedByL"></div></div>
+				<div style="padding-bottom:5px;" id="commentsPadding"><div id="addedOnL"></div></div>				
+				<div id="commentsAd">
+
+					<!-- ADSPACE: house/cnn_video/house.226x49 -->
+
+<!-- CALLOUT|http://ads.cnn.com/html.ng/site=cnn&cnn_pagetype=cnn_video&cnn_position=266x49_house&cnn_rollup=house&page.allowcompete=yes&params.styles=fs|CALLOUT -->
+<div id="ad-598777" align="center" style="padding: 0; margin: 0; border: 0;"></div>
+<script type="text/javascript">
+cnnad_createAd("598777","http://ads.cnn.com/html.ng/site=cnn&cnn_pagetype=cnn_video&cnn_position=266x49_house&cnn_rollup=house&page.allowcompete=yes&params.styles=fs","49","226");
+cnnad_registerSpace(598777,226,49);
+</script>
+
+
+
+ 
+				</div>
+				<div id="commentHolder1" style="display: none;padding-top:5px;"><img src="http://i.cdn.turner.com/cnn/video/bvp/images/flash_comment_top.gif" width="268" height="7" alt="" border="0"></div>
+				<div id="cnnVPCHdr" style="display: none;">
+					<div><img src="http://i.cdn.turner.com/cnn/video/bvp/images/flash_comment_arrow.gif" width="7" height="8" alt="" border="0" align="absmiddle" style="padding-bottom:2px"> <a href="javascript:showComments();"><b>Sound Off: Your opinions and comments<span id="numComments1"></span></b></a></div>
+
+				</div>
+				<div id="commentHolder2" style="display: none;"><img src="http://i.cdn.turner.com/cnn/video/bvp/images/flash_comment_bot.gif" width="268" height="7" alt="" border="0"></div>
+			</div>
+		</div>
+		<div class="clear"><img src="http://i.cdn.turner.com/cnn/images/1.gif" width="1" height="1" border="0" alt=""></div>
+	</div>
+	
+	<div id="cnnVPInfoLeftColS" style="height: 246px; width: 289px; display: none;">
+		<div style="padding:8px 10px 0px 10px; border-width: 0px 1px 0px 1px; border-color: #E6E6E6; border-style: solid;">
+			<div style="padding-bottom:8px;"><a href="javascript:hideComments();"><img src="http://i.cdn.turner.com/cnn/.element/img/2.0/video/bvp/nav_buttons/bigger_video.gif" width="79" height="23" alt="" border="0"></a></div>
+
+			<div id="contentS"></div>
+		</div>
+	</div>
+
+
+	<div id="cnnVPInfoRightColS" style="display: none; position: absolute; top:0px; left:290px; width: 287px;">
+		<div><img src="http://i.cdn.turner.com/cnn/video/bvp/images/flash_player_sm_top.gif" width="287" height="7" alt="" border="0"></div>
+                <div style="padding:8px 10px 0px 9px;">
+                        <div><div id="providedByS"></div></div>
+                        <div style="padding-bottom:15px;"><div id="addedOnS"><b>Added</b> November 16, 2006</div></div>
+
+                        <div><img src="http://i.cdn.turner.com/cnn/video/bvp/images/flash_comment_top.gif" width="268" height="7" alt="" border="0"></div>
+                        <div id="cnnVPCHdr"><div><img src="http://i.cdn.turner.com/cnn/video/bvp/images/flash_comment_d_arrow.gif" width="7" height="7" alt="" border="0"> <a href="javascript:hideComments();"><b>Sound Off: Your opinions and comments<span id="numComments2"></span></b></a></div></div>
+                        <div id="cnnVPCommentsCon">
+                                <div id="cnnVPCommentsBox">
+                                        <div style="width:228px;" id="videoComments"></div>
+                                </div>
+                        </div>
+                        <div id="cnnVPCommWrap"><div style="padding-bottom:5px;text-align:right;" id="postACommentLink"><a href="javascript:showPost();" style="font-weight:bold;">Post a comment</a></div></div>
+
+                        <div id="cnnVPCommPost" style="display:none;">
+                                <div style="background-color:#E7EEF4;"><img src="http://i.cdn.turner.com/cnn/images/1.gif" width="1" height="3" border="0" alt=""></div>
+                                        <div style="padding-top:8px;">
+                                                <div style="font-size:14px; font-weight:bold">Post a comment</div>
+                                                        <form method="post" id="commentsForm" name="commentsForm" action="http://comments.cnn.com/comments/post.jspa" onsubmit="validateComment(this); return false" target="cnnusercomment">
+                                                                <input type="hidden" name="email" value="foo@bar.com"/>
+                                                                <input type="hidden" name="createForum" value="1"/>
+                                                                <input type="hidden" name="forumName" value=""/>
+
+                                                                <input type="hidden" name="threadName" value=""/>
+								<input type="hidden" name="body" id="body"/>
+							<table cellspacing="4" cellpadding="0" border="0">
+                                                                <tr valign="top">
+									<td>Name</td>
+									<td></td>
+									<td>Location</td>
+								</tr>
+
+                                                                <tr valign="top">
+									<td><input type="text" name="name" id="name" class="commentsInput"/></td>
+									<td></td>
+									<td><input type="text" name="location" id="location" class="commentsInput"/></td>
+                                                        	</tr>
+								<tr valign="top">
+									<td>Comments</td>
+								</tr>
+
+								<tr valign="top">
+									<td colspan="3"><textarea id="comment" class="commentsTextarea"></textarea></td>
+								</tr>
+                                                        	<tr valign="top">		
+									<td colspan="3" style="width:5px;"><a href="javascript:validateComment('commentsForm');" style="font-weight:bold;">Submit</a></td>
+								</tr>
+                                                        </table>
+							</form>
+
+                                                </div>
+                                        </div>
+                                        <div id="cnnVPCommPosted" style="display:none;">
+                                                <div class="cnnTYShell">
+                                                        <div><img src="http://i.cdn.turner.com/cnn/video/bvp/images/thank_you_top.gif" width="234" height="55" alt="" border="0"></div>
+                                                        <div class="cnnTYBox" id="cnnTYBox">
+								<div id="thankYouSpacer"></div>
+                                                                <div style="font-size:22px;font-weight:bold;">Thank you!</div>
+
+                                                                Thank you for contributing. Comments are moderated by CNN and will not appear on this story until after they have been reviewed. Not all comments will be posted due to the volume we receive.
+                                                                <div style="text-align:right;padding:30px 6px 0px 0px;"><a href="javascript:hidePost();">Close</a></div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div><img src="http://i.cdn.turner.com/cnn/video/bvp/images/flash_comment_bot.gif" width="268" height="7" alt="" border="0"></div>
+                                </div>
+	</div>
+
+</div>
+<!-- /LARGE PLAYER HTML CODE -->
+
+<!-- SMALL PLAYER HTML CODE -->
+<div id="cnnVPFlashSmall" style="display:none;">
+
+
+
+<div class="clear"><img src="http://i.cdn.turner.com/cnn/images/1.gif" width="1" height="1" border="0" alt=""></div>
+
+</div>
+<!-- /SMALL PLAYER HTML CODE -->
+
+
+
+</div>
+
+
+<div><img src="http://i.cdn.turner.com/cnn/.element/img/2.0/video/bvp/flash_player_footer_6px.gif" width="576" height="6" alt="" border="0"></div>
+</div>
+</div>
+
+<div id="cnnVPRightCol">
+<div style="padding-top:18px;">
+<div style="height:308px;">
+<table cellspacing="0" cellpadding="0" border="0" width="336">
+<tr><td height="280" align="center"><div id="cnnVPAd"><img src="http://i.cdn.turner.com/cnn/images/1.gif" width="336" height="280" alt="" border="0"></div></td></tr>
+</table>
+</div>
+</div>
+
+<!-- PLAYLIST AREA -->
+<div id="cnnVPPlayList">
+
+<div id="PlayList_Nav" class="play_nav">
+<div>
+<div id="navNext_Up" class="cnnNav_ButtonPL_alt_active"><div id="navNext_Up_R" style="width:154px;"><a href="javascript:load_Play_List('navNext_Up');"><div>NEXT UP</div></a>&nbsp;</div></div>
+<div class="cnnNav_ButtonPL" id="navMyPlay_List"><div id="navMyPlay_List_R"><div id="myPlaylistQuantity"><a href="javascript:load_Play_List('navMyPlay_List');"><div>MY&nbsp;PLAYLIST&nbsp;&nbsp;<span style="color:#949494;">0</span></div></a>&nbsp;</div></div></div>
+</div>
+</div>
+
+<div id="cnnVPPlayBox">
+<div id="My_Play_Box" style="display:none;">
+
+<div class="box_item">&nbsp; No Videos selected</div>
+
+</div>
+<div id="Play_Box">
+
+<div class="box_item">&nbsp; Loading...</div>
+
+</div>
+</div>
+<div class="cnnVPBorBot"><div class="r_corner"><div class="b_line"><img src="http://i.cdn.turner.com/cnn/images/1.gif" width="1" height="3" border="0" alt=""></div></div></div>
+
+</div>
+<!-- /PLAYLIST AREA -->
+			
+</div>
+
+<div class="clear"><img src="http://i.cdn.turner.com/cnn/images/1.gif" width="1" height="1" border="0" alt=""></div>
+
+<!-- SECTIONS AND SEARCH -->
+
+<div id="Section_Nav">
+
+<div style="margin-left:14px;">
+<form name="searchForm" action="http://search.cnn.com/search">
+	<input type="hidden" name="type" value="video">
+	<input type="hidden" name="sortBy" value="date">
+<input type="hidden" name="intl" value="false">
+
+<table cellspacing="0" cellpadding="0" border="0" width="952">
+<colgroup>
+<col width="763">
+
+<col width="160">
+<col width="29">
+</colgroup>
+<tr valign="top">
+<td style="font-size:10px">
+<div id="navTop_Stories" class="cnnNav_Button_ret_med_active"><div id="navTop_Stories_R" style="width:204px"><a href="javascript:load_Section('navTop_Stories','/.element/ssi/www/auto/2.0/video/xml/top_stories.xml');"><div>TOP&nbsp;STORIES</div></a>&nbsp;</div></div>
+<div id="navMost_Popular" class="cnnNav_Button_ext_med"><div id="navMost_Popular_R"><a href="javascript:load_Section('navMost_Popular','/.element/ssi/www/auto/2.0/video/xml/most_popular.xml');"><div>MOST&nbsp;POPULAR</div></a>&nbsp;</div></div>
+<div id="navStaff_Picks" class="cnnNav_Button_ret_med"><div id="navStaff_Picks_R"><a href="javascript:load_Section('navStaff_Picks','/.element/ssi/www/auto/2.0/video/xml/staff_picks.xml');"><div>STAFF&nbsp;PICKS</div></a>&nbsp;</div></div>
+<div id="navCNN_TV" class="cnnNav_Button_sm"><div id="navCNN_TV_R"><a href="javascript:load_Section('navCNN_TV','/.element/ssi/www/auto/2.0/video/xml/cnn_tv.xml');"><div>CNN&nbsp;TV</div></a>&nbsp;</div></div>
+
+<div id="navPipeline_Live" class="cnnNav_Button_sm"><div id="navPipeline_Live_R"><a href="javascript:load_Section('navPipeline_Live','/.element/ssi/www/auto/2.0/video/xml/pipeline.xml');"><div>CNN&nbsp;LIVE</div></a>&nbsp;</div></div>
+<div id="navI_Reports" class="cnnNav_Button_ext_sm"><div id="navI_Reports_R"><a href="javascript:load_Section('navI_Reports','/.element/ssi/www/auto/2.0/video/xml/by_section_ireports.xml');"><div>I-REPORTS</div></a>&nbsp;</div></div>
+<div id="navBy_Section" class="cnnNav_Button_ext_sm"><div id="navBy_Section_R"><a href="javascript:load_Section('navBy_Section','',true);"><div>BY&nbsp;SECTION</div></a>&nbsp;</div></div>
+</td>
+<td align="right"><input type="text" name="query" size="15" class="cnnVideo_Search" value="search all video" onfocus="this.value = '';this.className = 'cnnVideo_Search_active';"></td>
+<td align="right"><input onclick="if (document.searchForm.query.value == 'search all video') { document.searchForm.query.value = 'video'; } document.searchForm.submit();" type="image" src="http://i.cdn.turner.com/cnn/.element/img/2.0/video/bvp/sections/search_button.gif" width="23" height="23" alt="" border="0"></td>
+</tr>
+</table>
+</form>
+</div>
+
+</div>
+
+<div id="cnnVPSections">
+<div id="By_Section_Box" style="display:none;">
+<table cellspacing="0" cellpadding="0" border="0">
+<colgroup>
+<col width="145">
+<col width="8">
+<col width="804">
+</colgroup>
+<tr valign="top">
+<td>
+<div id="By_Section_Nav">
+
+<!--<div id="section_us" class="cnnSec_Cell_active"><a href="javascript:load_By_Section('us', '/.element/ssi/www/auto/2.0/video/xml/by_section_us.xml');"><b>U.S.</b></a></div>-->
+
+<div id="section_us" class="cnnSec_ExCell_active"><a href="javascript:load_By_Section('us', '/.element/ssi/www/auto/2.0/video/xml/by_section_us.xml','us');"><b>U.S.</b></a></div>
+
+<div id="subsection_us">
+<div id="section_crime" class="cnnSec_SubCell"><a href="javascript:load_By_Section('crime', '/.element/ssi/www/auto/2.0/video/xml/by_section_crime.xml', 'us', '1');"><b>Crime</b></a></div>
+
+</div>
+
+<div id="section_world" class="cnnSec_ExCell"><a href="javascript:load_By_Section('world', '/.element/ssi/www/auto/2.0/video/xml/by_section_world.xml', 'world');"><b>World</b></a></div>
+<div id="subsection_world" style="display:none;">
+<div id="section_intl" class="cnnSec_SubCell"><a href="javascript:load_By_Section('intl', '/.element/ssi/www/auto/2.0/video/xml/by_section_international.xml', 'world', '1');"><b>International</b></a></div>
+<div id="section_espanol" class="cnnSec_SubCell"><a href="javascript:load_By_Section('espanol', '/.element/ssi/www/auto/2.0/video/xml/by_section_espanol.xml', 'world', '1');"><b>CNN en Espa&#241;ol</b></a></div>
+</div>
+
+<div id="section_politics" class="cnnSec_Cell"><a href="javascript:load_By_Section('politics', '/.element/ssi/www/auto/2.0/video/xml/by_section_politics.xml');"><b>Politics</b></a></div>
+
+<div id="section_showbiz" class="cnnSec_ExCell"><a href="javascript:load_By_Section('showbiz', '/.element/ssi/www/auto/2.0/video/xml/by_section_showbiz.xml', 'showbiz');"><b>Entertainment</b></a></div>
+
+<div id="subsection_showbiz" style="display:none;">
+<div id="section_funny" class="cnnSec_SubCell"><a href="javascript:load_By_Section('funny', '/.element/ssi/www/auto/2.0/video/xml/by_section_funny_news.xml', 'showbiz', '1');"><b>Offbeat</b></a></div>
+</div>
+
+<div id="section_tech" class="cnnSec_Cell"><a href="javascript:load_By_Section('tech','/.element/ssi/www/auto/2.0/video/xml/by_section_tech.xml');"><b>Tech</b></a></div>
+
+<div id="section_living" class="cnnSec_ExCell"><a href="javascript:load_By_Section('living', '/.element/ssi/www/auto/2.0/video/xml/by_section_living.xml', 'living');"><b>Living</b></a></div>
+<div id="subsection_living" style="display:none;">
+<div id="section_student" class="cnnSec_SubCell"><a href="javascript:load_By_Section('student', '/.element/ssi/www/auto/2.0/video/xml/by_section_student.xml', 'living', '1');"><b>Student News</b></a></div>
+
+</div>
+
+<div id="section_health" class="cnnSec_Cell"><a href="javascript:load_By_Section('health','/.element/ssi/www/auto/2.0/video/xml/by_section_health.xml');"><b>Health</b></a></div>
+
+<div id="section_business" class="cnnSec_Cell"><a href="javascript:load_By_Section('business', '/.element/ssi/www/auto/2.0/video/xml/by_section_business.xml');"><b>Business</b></a></div>
+<div id="section_sports" class="cnnSec_Cell"><a href="javascript:load_By_Section('sports', '/.element/ssi/www/auto/2.0/video/xml/by_section_sports.xml');"><b>Sports</b></a></div>
+<div id="section_weather" class="cnnSec_Cell"><a href="javascript:load_By_Section('weather', '/.element/ssi/www/auto/2.0/video/xml/by_section_weather.xml');"><b>Weather</b></a></div>
+</div>
+</td>
+<td>&nbsp;</td>
+<td><div id="By_Section_Content">Loading...</div></td>
+</tr>
+
+</table>
+</div>
+
+<div id="Section_Box">
+<div id="Secton_Box_Container">
+
+<!-- TOP STORIES HTML -->
+</div>
+<!-- /TOP STORIES HTML -->
+
+</div>
+<div class="clear"><img src="http://i.cdn.turner.com/cnn/images/1.gif" width="1" height="10" border="0" alt=""></div>
+<script>
+<!--
+
+var currBySectionNav = "us";
+var default_section_xml = "/.element/ssi/www/auto/2.0/video/xml/by_section_us.xml";
+
+//var xmlHTTPBYSec = WTPO_getXMLHTTP();
+//WTPO_getXMLContent("/.element/ssi/www/auto/2.0/video/xml/by_section_us.xml", handle_By_Section_XML, xmlHTTPBYSec);
+
+//-->
+</script>
+
+</div>
+
+</div>
+<div><img src="http://i.cdn.turner.com/cnn/.element/img/2.0/video/bvp/sections/sec_bottom.gif" width="984" height="6" alt="" border="0"></div>
+<!-- /SECTIONS AND SEARCH -->
+
+</div>
+</div>
+</div>
+
+<div align="center" style="margin-top:15px;font-size:11px;line-height:18px;color:#949494;">
+<a href="/">Home</a> &nbsp;|&nbsp; <a href="/WORLD/">World</a> &nbsp;|&nbsp; <a href="/US/">U.S.</a> &nbsp;|&nbsp; <a href="/POLITICS/">Politics</a> &nbsp;|&nbsp; <a href="/SHOWBIZ/">Entertainment</a> &nbsp;|&nbsp; <a href="/HEALTH">Health</a> &nbsp;|&nbsp; <a href="/TECH">Tech</a> &nbsp;|&nbsp; <a href="/TRAVEL/">Travel</a> &nbsp;|&nbsp; <a href="living">Living</a> &nbsp;|&nbsp; <a href="/money/">Business</a> &nbsp;|&nbsp; <a href="/si/">Sports</a> &nbsp;|&nbsp; <a href="/time/">Time.com</a><br>
+
+&copy; 2007 Cable News Network LP, LLLP. A Time Warner Company. All Rights Reserved.<br>
+<a href="/interactive_legal.html">Terms of service</a> &nbsp;|&nbsp; <a href="/privacy.html">Privacy guidelines</a> <!--&nbsp;|&nbsp; <a href="Advertise">Advertise with us</a> -->&nbsp;|&nbsp; <a href="/about/">About us</a> &nbsp;|&nbsp; <a href="/feedback/">Contact us</a> &nbsp;|&nbsp; <a href="/help/">Help</a>
+
+</div>
+
+<img src="http://i.cdn.turner.com/cnn/images/1.gif" alt="" id="TargetImage" name="TargetImage" width="1" height="1" onLoad="getAdHeadCookie(this)"><img src="http://i.cdn.turner.com/cnn/images/1.gif" alt="" id="TargetImageDE" name="TargetImageDE" width="1" height="1" onLoad="getDEAdHeadCookie(this)"><img src="http://i.cdn.turner.com/cnn/images/1.gif" alt="" width="0" height="0" border="0" vspace="0" hspace="0" name="cookieCrumb" id="cookieCrumb" align="right">
+
+<!-- SiteCatalyst code -->
+<script language="JavaScript" src="http://i.cdn.turner.com/cnn/.element/js/2.0/s_code.js"></script>
+<script language="JavaScript">
+<!--
+var cnnWinLoc = window.location.pathname;
+var cnnWinExtra = window.location.hash;
+var cnnWinLocRegExp = /\/$/; 
+var cnnWinExtraRegExp = /\?/;
+if(cnnWinLocRegExp.test(cnnWinLoc)){cnnWinLoc = cnnWinLoc + "index.html";}
+if(cnnWinExtra != "undefined") {
+if(cnnWinExtraRegExp.test(cnnWinExtra)){var cnnOmniExtra = cnnWinExtraRegExp.split(cnnWinExtra);cnnWinLoc = cnnWinLoc + cnnOmniExtra[0];}
+else {cnnWinLoc = cnnWinLoc + cnnWinExtra;}}
+if (typeof(cnnPageName) != "undefined") {s.pageName = cnnPageName;s.eVar1 = cnnPageName;} else {s.pageName = cnnWinLoc;s.eVar1 = cnnWinLoc;}
+if (typeof(cnnSectionName) != "undefined") {s.channel=cnnSectionName;s.eVar2=cnnSectionName;} else {s.channel="Nonlabeled";s.eVar2="Nonlabeled";}
+if (typeof(cnnSubSectionName) != "undefined") {s.server=cnnSubSectionName;s.eVar3=cnnSubSectionName;} else {s.server="";s.eVar3="";}
+if (typeof(cnnSectionFront) != "undefined") {s.prop1=cnnSectionFront;} 
+if (typeof(cnnContentType) != "undefined") {s.prop4=cnnContentType;s.prop6=s.pageName;}
+
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+if (typeof(cnnMosaicDetect) == "undefined")
+{var s_code=s.t();if(s_code)document.write(s_code)}//--> </script>
+<script language="JavaScript"><!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script><noscript><img
+src="http://metrics.cnn.com/b/ss/cnn2global/1/H.1--NS/0?pageName=No%20Javascript"
+height="1" width="1" border="0" alt="" /></noscript><!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code -->
+
+<noscript>
+	<style type="text/css">
+		#cnnTxtCmpnt {display:block;}
+		#cnnTabNav {display:none;}
+ 	</style>
+</noscript>
+
+<div id="dataInstanceTest" style="behavior:url('#default#userData')">&nbsp;</div>
+
+
+<script src="http://content.dl-rms.com/rms/mother/5721/nodetag.js"></script>
+
+</body>
+<iframe src="about:blank" id="cnnusercomment" name="cnnusercomment" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" height="1" width="1" style="position:absolute;bottom:0;left:0;"></iframe>				</html>

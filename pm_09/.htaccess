@@ -1,0 +1,4 @@
+ AuthType Basic
+ AuthUserFile /home/smobadmin/pass
+ AuthName "Members Area"
+ require valid-user

@@ -1,0 +1,82 @@
+<html>
+<head>
+
+<script language="javascript" src="http://jcmsdev8.cnn.com:82/.element/js/2.0/video/savp/affiliate/modules/cnnVodModule.js"></script>
+<style type="text/css">
+	body {
+		font-family:Arial, Helvetica, sans-serif;
+		font-size: 12px;
+	}
+</style>
+
+</head>
+<body>
+<div id="myVODModule1_title"></div>
+<div id="myVODModule1"></div><br/><br/>
+
+<div id="myVODModule2_title"></div>
+<div id="myVODModule2"></div><br/><br/>
+
+<div id="myVODModule4_title"></div>
+<div id="myVODModule4"></div><br/><br/>
+
+<div id="myVODModule5_title"></div>
+<div id="myVODModule5"></div><br/><br/>
+
+<div id="myVODModule6_title"></div>
+<div id="myVODModule6"></div><br/>
+
+
+<div id="myVODModule7_title"></div>
+<div id="myVODModule7"></div><br/><br/>
+
+<div id="myVODModule8_title"></div>
+<div id="myVODModule8"></div><br/><br/>
+
+<script type="text/javascript">
+	document.getElementById('myVODModule1_title').innerHTML = 'location: intl';
+	loadCNNVODModule({
+		divId : "myVODModule1",
+		color : "white",
+		location : "intl",
+		testURL: "http://jcmsdev8.cnn.com:82/video/savp/affiliate/index_localized.html",
+		numPerPage : 3 
+	});
+
+	document.getElementById('myVODModule2_title').innerHTML = '"location" : "intl",<br> vidListXmlUrl : "election2008_last3.xml", <br> "bannerURL" : "america_votes.jpg",  <br> "bannerLink" : "http://www.cnn.com/politics"';
+	loadCNNVODModule({
+        "divId" : "myVODModule2",
+        "color" : "banner",
+        "bannerURL" : "america_votes.jpg",
+        "bannerLink" : "http://www.cnn.com/politics",
+        "vidListXmlUrl" : "election2008_last3.xml",
+        "location" : "intl",
+       	"testURL": "http://jcmsdev8.cnn.com:82/video/savp/affiliate/index_localized.html",
+         "numPerPage" : 3
+    });
+ 
+	document.getElementById('myVODModule4_title').innerHTML = 'no location set (domestic),<br> no video XML set';
+    loadCNNVODModule({
+		"divId" : "myVODModule4",
+		"color" : "white",
+		"numPerPage" : 3,
+		testURL: "http://jcmsdev8.cnn.com:82/video/savp/affiliate/index_localized.html"
+	});
+ 
+
+     //sample showing a different feed source
+	document.getElementById('myVODModule5_title').innerHTML = 'no location set (domestic),<br> "bannerURL" : "america_votes.jpg",<br> "bannerLink" : "http://www.cnn.com/politics",<br> "vidListXmlUrl" : "election2008_last3.xml",';
+     loadCNNVODModule({
+        divId : "myVODModule5",
+        color : "banner",
+        bannerURL : "america_votes.jpg",
+        bannerLink : "http://www.cnn.com/politics",
+        vidListXmlUrl : "election2008_last3.xml",
+        numPerPage : 3,
+		testURL: "http://jcmsdev8.cnn.com:82/video/savp/affiliate/index_localized.html"
+    });
+  /**/
+</script>
+
+</body>
+</html>
